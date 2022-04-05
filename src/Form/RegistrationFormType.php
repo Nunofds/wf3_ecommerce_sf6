@@ -21,45 +21,48 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('email', EmailType::class, [
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control',
+                    'placeholder' => 'Votre e-mail',
                 ],
-                'label' => 'E-mail'
+                'label' => 'Votre e-mail',
             ])
             ->add('lastname', TextType::class, [
                 'attr' => [
                     'class' => 'form-control',
+                    'placeholder' => 'Votre nom',
                 ],
-                'label' => 'Nom'
+                'label' => 'Votre nom',
             ])
             ->add('firstname', TextType::class, [
                 'attr' => [
                     'class' => 'form-control',
+                    'placeholder' => 'Votre prénom',
                 ],
-                'label' => 'Prénom'
+                'label' => 'Votre prénom',
             ])
             ->add('adress', TextType::class, [
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Adresse'
+                'label' => 'Adresse',
             ])
             ->add('zipcode', TextType::class, [
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control',
                 ],
-                'label' => 'Code Postal'
+                'label' => 'Code Postal',
             ])
             ->add('city', TextType::class, [
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Ville'
+                'label' => 'Ville',
             ])
             ->add('RGPDConsent', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Vous devez accepter les RGPD',
                     ]),
                 ],
                 'label' => 'En m\'inscrivant à ce site s\'accepte les RGPG '
@@ -69,11 +72,11 @@ class RegistrationFormType extends AbstractType
                 // this is read and encoded in the controller
                 'mapped' => false,
                 'attr' => ['autocomplete' => 'new-password',
-                    'class' => 'form-control'
+                    'class' => 'form-control',
                 ],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Vous devez renseigner un mot de passe',
                     ]),
                     new Length([
                         'min' => 8,

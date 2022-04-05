@@ -1,12 +1,16 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/login_form.css') }}">
+{% endblock %}
+
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-    <div class="conteiner">
+    <div class="container login_form">
         <div class="row">
             <div class="col-10 mx-auto">
-                <h1>Inscription</h1>
+                <h1 class="text-center mb-3">Inscription</h1>
 
                 {{ form_start(registrationForm) }}
                 <fieldset class="mb-3">

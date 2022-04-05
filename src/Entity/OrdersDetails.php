@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Trait\CreatedAtTrait;
 use App\Repository\OrdersDetailsRepository;
 use Doctrine\ORM\Mapping as ORM;
 
